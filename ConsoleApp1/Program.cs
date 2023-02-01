@@ -12,6 +12,7 @@ namespace ConsoleApp1
             var dt = new TestDataSet();
             adp.Fill(dt);
 
+
             var rw = dt.CategoryDef.FindByCategoryDefId(1);
         }
     }
