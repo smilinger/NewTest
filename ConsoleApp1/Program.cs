@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace ConsoleApp1
 {
@@ -10,6 +6,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            var conn = new SqlConnection(Properties.Settings.Default.TestConnectionString);
+            var adp = new SqlDataAdapter();
+
+            var dt = new TestDataSet();
+            adp.Fill(dt);
+            var rw = dt.CategoryDef.FindByCategoryDefId(1);
         }
     }
 }
